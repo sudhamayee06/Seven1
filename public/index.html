@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Build a sample app</title>
+		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script>
+			//do not delete this code
+			var baseUrl = "/"+location.href.replace(/http(s)?:\/\//,'').match(/[^\/]*\/(.*)/)[1]+"/"
+			var fileref=document.createElement('base')
+			if (baseUrl.length > 3){
+				fileref.setAttribute("href",baseUrl)
+				fileref.setAttribute("target","_blank")
+			}
+			document.getElementsByTagName("head")[0].appendChild(fileref)
+			var pathName = (location.pathname === "/" ? "" : location.pathname),
+	        	locationValue = location.protocol + "//" + location.hostname + ((location.port) ? (':' + location.port) : '') + pathName;
+	       function loadjscssfile(filename, filetype,callback){
+	          if (filetype=="js"){ //if filename is a external JavaScript file
+	              var fileref=document.createElement('script')
+	              fileref.setAttribute("type","text/javascript")
+	              fileref.setAttribute("src", filename)
+	              if(callback){
+	               if(fileref.readyState) {  //IE
+	                  fileref.onreadystatechange = function() {
+	                    if ( fileref.readyState === "loaded" || fileref.readyState === "complete" ) {
+	                      fileref.onreadystatechange = null;
+	                      callback();
+
+	                    }
+	                  };
+	                } else {  //Others
+	                  fileref.onload = function() {
+	                    callback();
+	                  };
+	                }
+	              }
+	          }
+	          else if (filetype=="css"){ //if filename is an external CSS file
+	              var fileref=document.createElement("link")
+	              fileref.setAttribute("rel", "stylesheet")
+	              fileref.setAttribute("type", "text/css")
+	              fileref.setAttribute("href", filename)
+	          }
+	          if (typeof fileref!="undefined")
+	              document.getElementsByTagName("head")[0].appendChild(fileref)
+	        }
+
+	    loadjscssfile(locationValue+"/js/script.js","js");
+	    loadjscssfile(locationValue+"/css/style.css","css");
+		</script>
+	</head>
+
+	<body>
+        <div class="container">
+        	<h1>Build a sample app</h1>
+        </div>
+    </body>
+</html>

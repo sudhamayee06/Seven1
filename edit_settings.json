@@ -1,0 +1,26 @@
+{  
+   "active":[
+      {"username":"snapwiz","path":"\/home\/{{userName}}\/project\/application\/README.txt","focused":false},
+      {"username":"snapwiz","path":"\/home\/{{userName}}\/project\/application\/public\/index.html","focused":false},
+      {"username":"snapwiz","path":"\/home\/{{userName}}\/project\/application\/public\/css\/style.css","focused":false},
+      {"username":"snapwiz","path":"\/home\/{{userName}}\/project\/application\/public\/js\/script.js","focused":true}
+   ],
+   "projects":[  
+      {  
+         "name":"Generic_JS_App",
+         "path":"\/home\/{{userName}}\/project\/application",
+         "container_id":"testContainerId",
+         "collaboration":false,
+         "source":"{{xtermUrl}}",
+         "build":false,
+         "browser":true,
+         "browser_in_new_tab": true,
+         "browser_url":"{{browserUrl}}",
+         "browser_button_name": "Launch App",
+         "defaultOpenFolder":"\/home\/{{userName}}\/project\/application\/public",
+         "readOnlyFolders":["/home/{{userName}}/project/application/README.txt"],
+         "hiddenFolders":["\/home\/{{userName}}\/project\/application\/node_modules"],
+         "hiddenFiles":["\/home\/{{userName}}\/project\/application\/package.json"]
+      }
+   ]
+}
